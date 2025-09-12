@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaHome, FaListAlt, FaCog } from "react-icons/fa";
+import { FaHome, FaListAlt, FaCog, FaBell, FaEnvelope, FaUser } from "react-icons/fa";
 
 export default function Sidebar() {
   const loc = useLocation();
@@ -9,10 +9,7 @@ export default function Sidebar() {
       <div className="logo">RK</div>
 
       <Link to="/" title="Landing">
-        <div
-          className={`nav-btn ${loc.pathname === "/" ? "active" : ""}`}
-          aria-hidden
-        >
+        <div className={`nav-btn ${loc.pathname === "/" ? "active" : ""}`} aria-hidden>
           <FaHome />
         </div>
       </Link>
@@ -31,6 +28,25 @@ export default function Sidebar() {
       <Link to="/settings" title="Settings">
         <div className="nav-btn" aria-hidden>
           <FaCog />
+        </div>
+      </Link>
+
+      {/* Extra icons → all point to "/" */}
+      <Link to="/" title="Notifications">
+        <div className="nav-btn" aria-hidden>
+          <FaBell />
+        </div>
+      </Link>
+
+      <Link to="/" title="Messages">
+        <div className="nav-btn" aria-hidden>
+          <FaEnvelope />
+        </div>
+      </Link>
+
+      <Link to="/" title="Profile">
+        <div className="nav-btn" aria-hidden>
+          <FaUser />
         </div>
       </Link>
 
