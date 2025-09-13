@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CampaignForm from "../components/CampaignForm";
 import CampaignTable from "../components/CampaignTable";
+import CampaignCalendar from "../components/CampaignCalendar";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +9,7 @@ export default function Campaigns() {
   const [campaigns, setCampaigns] = useLocalStorage("campaigns", []);
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
+  const [view, setView] = useState("table");
   const nav = useNavigate();
 
   function handleSave(data) {
@@ -44,6 +46,12 @@ export default function Campaigns() {
         <div className="page-title">Campaigns</div>
         <div className="header-actions">
           <button
+            onClick={() => setView(view === "table" ? "calendar" : "table")}
+            className="button"
+          >
+            {view === "table" ? "Calendar View" : "Table View"}
+          </button>
+          <button
             onClick={() => {
               setEditing(null);
               setShowForm(true);
@@ -57,12 +65,16 @@ export default function Campaigns() {
 
       <div className="content-grid">
         <div className="card">
-          <CampaignTable
-            campaigns={campaigns}
-            onView={handleView}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-          />
+          {view === "table" ? (
+            <CampaignTable
+              campaigns={campaigns}
+              onView={handleView}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+          ) : (
+            <CampaignCalendar campaigns={campaigns} onSelect={handleView} />
+          )}
         </div>
       </div>
 
