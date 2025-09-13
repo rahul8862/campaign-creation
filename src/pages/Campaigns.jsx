@@ -43,7 +43,7 @@ export default function Campaigns() {
   return (
     <div className="main">
       <div className="page-header">
-        <div className="page-title">Campaigns</div>
+        <div className="page-title">Campaign</div>
         <div className="header-actions">
           <button
             onClick={() => setView(view === "table" ? "calendar" : "table")}
@@ -62,7 +62,7 @@ export default function Campaigns() {
           </button>
         </div>
       </div>
-
+      <p>Automate your customer journey with pre build recipies</p>
       <div className="content-grid">
         <div className="card">
           {view === "table" ? (

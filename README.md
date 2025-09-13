@@ -1,12 +1,26 @@
-# React + Vite
+# Campaign Creation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + Vite web app to create, manage, and view marketing campaigns.
+It supports table view and calendar view, with CRUD actions and local storage persistence.
 
-Currently, two official plugins are available:
+## Features
+- Landing page with project intro
+- Sidebar navigation (Home, Campaigns, etc.)
+- Campaign creation form (name, message, recipients, status, created on)
+- Campaigns table with search, filter, edit, delete, view
+- Calendar view (Month/Week/Day) for campaign scheduling
+- Data stored in localStorage for persistence
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Landing Page and Sidebar navigation
+![alt text](image.png)
 
-## Expanding the ESLint configuration
+## Campaign creation form
+![alt text](image-1.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Campaigns table with search, filter, edit, delete, view
+![alt text](image-2.png)
+
+![alt text](image-4.png)
+
+## Calender View
+![alt text](image-3.png)
